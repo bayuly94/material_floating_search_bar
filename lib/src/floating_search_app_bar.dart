@@ -617,9 +617,7 @@ class FloatingSearchAppBarState extends ImplicitlyAnimatedWidgetState<
           input = DefaultTextStyle(
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
-            style: Theme.of(context).appBarTheme.textTheme?.headline6 ??
-                Theme.of(context).textTheme.headline6 ??
-                const TextStyle(),
+            style: Theme.of(context).textTheme.titleLarge ?? const TextStyle(),
             child: input,
           );
         }
@@ -672,10 +670,10 @@ class FloatingSearchAppBarState extends ImplicitlyAnimatedWidgetState<
 
     return FloatingSearchAppBarStyle(
       height: widget.height ?? kToolbarHeight,
-      accentColor: widget.accentColor ?? theme.accentColor,
+      accentColor: widget.accentColor ?? theme.primaryColor,
       backgroundColor: widget.color ?? theme.cardColor,
       iconColor: widget.iconColor ?? theme.iconTheme.color ?? Colors.grey,
-      colorOnScroll: widget.colorOnScroll ?? appBar.color,
+      colorOnScroll: widget.colorOnScroll ?? appBar.backgroundColor,
       shadowColor: widget.shadowColor ?? appBar.shadowColor ?? Colors.black54,
       elevation: widget.elevation ?? appBar.elevation ?? 0.0,
       liftOnScrollElevation: widget.liftOnScrollElevation,
